@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+    box-sizing: border-box;
+}
+</style>
+<script>
+function startTime() {
+    var today = new Date();
+	var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+	var year = today.getFullYear();
+	var month = today.getMonth() + 1;
+	var date = today.getDate();
+    var hour = today.getHours();
+    var minute = today.getMinutes();
+    var second = today.getSeconds();
+    minute = checkTime(minute);
+    second = checkTime(second);
+	document.getElementById('txt').innerHTML =
+    weekdays[today.getDay()] + " "
+	+ date + "." + month + "." + year + " "
+	+ hour + ":" + minute + ":" + second;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+</head>
+<body onload="startTime()">
+
+<div id="txt"></div>
+
+</body>
+</html>
+
