@@ -6,6 +6,18 @@
 * {
     box-sizing: border-box;
 }
+
+.floating-box {
+    display: inline-block;
+    width: 320px;
+    height: 100px;
+    margin: 10px;
+    border: 3px solid #73AD21;
+	font-size: 4.5em;
+	text-align: center;
+	background-color: #73AD21;
+	color: white;
+}	
 </style>
 <script>
 function startTime() {
@@ -19,10 +31,9 @@ function startTime() {
     var second = today.getSeconds();
     minute = checkTime(minute);
     second = checkTime(second);
-	document.getElementById('txt').innerHTML =
-    weekdays[today.getDay()] + " "
-	+ date + "." + month + "." + year + " "
-	+ hour + ":" + minute + ":" + second;
+	document.getElementById('weekday').innerHTML = weekdays[today.getDay()];
+	document.getElementById('date').innerHTML = date + "." + month + "." + year;
+	document.getElementById('time').innerHTML = hour + ":" + minute + ":" + second;
     var t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
@@ -33,7 +44,9 @@ function checkTime(i) {
 </head>
 <body onload="startTime()">
 
-<div id="txt"></div>
+<div id="weekday" class="floating-box"></div>
+<div id="date" class="floating-box"></div>
+<div id="time" class="floating-box"></div>
 
 </body>
 </html>
