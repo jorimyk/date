@@ -12,12 +12,34 @@
     width: 320px;
     height: 100px;
     margin: 10px;
-    border: 3px solid #73AD21;
 	font-size: 4.5em;
 	text-align: center;
 	background-color: #73AD21;
 	color: white;
+	box-shadow: 10px 10px grey;
 }	
+
+#weekday:hover	 {
+    transform: rotateX(180deg);
+}
+
+#date:hover	 {
+    transform: rotateY(180deg);
+}
+
+#time {
+    animation: second 1s linear infinite;
+}
+
+@keyframes second {
+    from {background-color: black;}
+    to {background-color: white;}
+}
+
+body {
+    background: linear-gradient(to right, rgba(0,255,0,0), rgba(0,255,0,1));
+}
+
 </style>
 <script>
 function startTime() {
